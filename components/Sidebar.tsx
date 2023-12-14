@@ -10,7 +10,7 @@ const routes = [
     label: "Dashboard",
     icon: LayoutDashboard,
     href: "/",
-    color: "text-sky-500",
+    color: "text-blue-500",
   },
   {
     label: "Conversation",
@@ -22,7 +22,7 @@ const routes = [
     label: "Image Generation",
     icon: ImageIcon,
     href: "/image",
-    color: "text-pink-700",
+    color: "text-red-700",
   },
   {
     label: "Code Generation",
@@ -35,10 +35,10 @@ const routes = [
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <div className="flex flex-col h-full space-y-4 bg-slate-900 py-4 text-white">
+    <div className="flex h-full flex-col space-y-4 bg-gray-800 py-4 text-white">
       <div className="px-3 py-2">
         <Link href="/">
-          <h1 className="text-2xl font-bold">AI Tools</h1>
+          <div className="text-2xl font-bold">AI Tools</div>
         </Link>
       </div>
       <div className="space-y-1">
@@ -48,10 +48,10 @@ const Sidebar = () => {
             key={route.href}
             className={clsx(
               "group flex w-full cursor-pointer justify-start rounded-lg p-3 text-sm font-medium transition hover:bg-white/10 hover:text-white",
-              pathname === route.href ? "bg-white/10" : "text-zinc-400"
+              pathname === route.href ? "bg-white/10" : "text-zinc-400",
             )}
           >
-            <div className="flex flex-1 item-center">
+            <div className="item-center flex flex-1">
               <route.icon className={clsx("mr-3 h-5 w-5", route.color)} />
               {route.label}
             </div>

@@ -20,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="hidden h-full bg-gray-900 md:fixed md:flex md:w-72 md:flex-col">
+        <aside className="hidden h-full bg-gray-900 md:fixed md:flex md:w-72 md:flex-col">
           <Sidebar />
-        </div>
+        </aside>
         <main className="md:pl-72">
           <Navbar />
           {children}
