@@ -49,11 +49,11 @@ export default function Home() {
             key={tool.href}
             onClick={() => router.push(tool.href)}
             className={clsx(
-              "mx-auto flex w-full items-center rounded-xl border p-2 shadow-md transition-all hover:shadow-xl focus:outline-none focus:ring-2",
+              "mx-auto flex w-full items-center rounded-xl border p-4 shadow-md transition-all hover:shadow-xl focus:outline-none focus:ring-2",
               tool.outlineColor,
             )}
           >
-            <div>
+            <div className="flex items-center gap-5">
               <div
                 className={clsx(
                   "flex h-16 w-16 items-center justify-center rounded-full",
@@ -62,7 +62,7 @@ export default function Home() {
               >
                 <tool.icon className={tool.color} size={32} />
               </div>
-              <div className="text-center text-sm font-light">{tool.label}</div>
+              <div className="text-center text-lg font-bold">{tool.label}</div>
             </div>
             <ArrowRight className="ml-auto h-10 w-10" />
           </button>
