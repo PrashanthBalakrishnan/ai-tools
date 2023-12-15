@@ -1,8 +1,26 @@
+"use client";
 import Heading from "@/components/Heading";
-import { Input } from "@/components/ui/input";
-import { MessageSquare } from "lucide-react";
 
-const page = () => {
+import { MessageSquare } from "lucide-react";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useState } from "react";
+
+const ConversationPage = () => {
+  const [isLoading, setisLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FieldValues>({
+    defaultValues: {
+      prompt: "",
+    },
+  });
+
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    console.log(data);
+  };
+
   return (
     <section>
       <Heading
@@ -12,7 +30,11 @@ const page = () => {
         iconColor="text-violet-500"
         bgColor="bg-violet-500/10"
       />
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="ml-auto flex w-[80%]"
+      ></form>
     </section>
   );
 };
-export default page;
+export default ConversationPage;

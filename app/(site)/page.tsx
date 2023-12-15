@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight, MessageSquare, Code, Image } from "lucide-react";
 
 const tools = [
   {
@@ -15,7 +15,7 @@ const tools = [
   },
   {
     label: "Image Generation",
-    icon: MessageSquare,
+    icon: Image,
     color: "text-red-500",
     bgColor: "bg-red-500/10",
     outlineColor: "focus:ring-red-500",
@@ -23,21 +23,22 @@ const tools = [
   },
   {
     label: "Code Generation",
-    icon: MessageSquare,
+    icon: Code,
     color: "text-green-500",
     bgColor: "bg-green-500/10",
     outlineColor: "focus:ring-green-500",
     href: "/code",
   },
 ];
+
 export default function Home() {
   const router = useRouter();
   return (
     <section className="mb-8 space-y-4 py-10">
       <div>
-        <h2 className="text-center text-2xl font-bold md:text-4xl">
+        <h1 className="text-center text-2xl font-bold md:text-4xl">
           Explore the power of AI
-        </h2>
+        </h1>
         <p className="text-center text-sm font-light lg:text-lg">
           The AI Playground is a collection of tools that demonstrate the
           capabilities of AI.
