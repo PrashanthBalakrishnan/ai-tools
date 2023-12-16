@@ -11,6 +11,8 @@ interface InputProps {
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
   disabled?: boolean;
+  placeholder?: string;
+  className?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -21,43 +23,27 @@ const Input: React.FC<InputProps> = ({
   register,
   errors,
   disabled,
+  placeholder,
+  className,
 }) => {
   return (
-    <div>
-      <label
-        className="block text-sm font-medium leading-6 text-gray-900"
-        htmlFor={id}
-      >
+    <div className="p-5">
+      <label className="sr-only" htmlFor={id}>
         {label}
       </label>
       <div className="mt-2">
         <input
           className={clsx(
-            `
-                        form-input
-                        block
-                        w-full
-                        rounded-md
-                        border-0
-                        py-1.5
-                        text-gray-900
-                        shadow-sm
-                        ring-1
-                        ring-inset
-                        ring-gray-300
-                        placeholder:text-gray-400
-                        focus:ring-2
-                        focus:ring-inset
-                        focus:ring-sky-600
-                        sm:text-sm
-                        sm:leading-6`,
+            ` `,
             errors[id] && "focus:ring-rose-500",
             disabled && "cursor-default opacity-50",
+            className,
           )}
           id={id}
           type={type}
           autoComplete={id}
           disabled={disabled}
+          placeholder={placeholder}
           {...register(id, { required })}
         />
       </div>
