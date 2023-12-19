@@ -15,23 +15,23 @@ const tools = [
     hoverColor: "hover:bg-violet-500/50",
     href: "/conversation",
   },
-  {
-    label: "Image Generation",
-    icon: Image,
-    color: "text-red-500",
-    bgColor: "bg-red-500/20",
-    hoverColor: "hover:bg-red-500/50",
+  // {
+  //   label: "Image Generation",
+  //   icon: Image,
+  //   color: "text-red-500",
+  //   bgColor: "bg-red-500/20",
+  //   hoverColor: "hover:bg-red-500/50",
 
-    href: "/image",
-  },
-  {
-    label: "Code Generation",
-    icon: Code,
-    color: "text-green-500",
-    bgColor: "bg-green-500/20",
-    hoverColor: "hover:bg-green-500/50",
-    href: "/code",
-  },
+  //   href: "/image",
+  // },
+  // {
+  //   label: "Code Generation",
+  //   icon: Code,
+  //   color: "text-green-500",
+  //   bgColor: "bg-green-500/20",
+  //   hoverColor: "hover:bg-green-500/50",
+  //   href: "/code",
+  // },
 ];
 
 export default function Home() {
