@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import Loader from "@/components/Loader";
 import { cn } from "@/lib/utils";
 import Empty from "@/components/Empty";
-import { Input } from "@/components/ui/Input";
+import Input from "@/components/ui/input";
 
 type messageType = {
   content: string;
@@ -21,7 +21,6 @@ type messageType = {
 const ConversationPage = () => {
   const [messages, setMessages] = useState<messageType[]>([]);
   const router = useRouter();
-
   const {
     register,
     handleSubmit,
