@@ -5,6 +5,12 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_KEY,
 });
 
+const instructionMessage = {
+  role: "system",
+  content:
+    "You are a code generator!. You must only answer in markdown code snippets!. Use code comments for explanation.DONT answer any question that is not code related!.",
+};
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -19,8 +25,7 @@ export async function POST(req: Request) {
 
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages,
-      max_tokens: 100,
+      messages: [instructionMessage, ...messages],
     });
 
     return NextResponse.json(response.choices[0].message);
