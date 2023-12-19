@@ -1,6 +1,6 @@
 import Heading from "@/components/Heading";
 import { Image } from "lucide-react";
-const page = () => {
+const ImagePage = () => {
   return (
     <section>
       <Heading
@@ -13,4 +13,4 @@ const page = () => {
     </section>
   );
 };
-export default page;
+export default ImagePage;

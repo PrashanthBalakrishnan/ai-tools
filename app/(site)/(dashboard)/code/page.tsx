@@ -1,7 +1,9 @@
+"use client";
+
 import Heading from "@/components/Heading";
 import { Code } from "lucide-react";
 
-const page = () => {
+const CodePage = () => {
   return (
     <section>
       <Heading
@@ -14,4 +16,4 @@ const page = () => {
     </section>
   );
 };
-export default page;
+export default CodePage;

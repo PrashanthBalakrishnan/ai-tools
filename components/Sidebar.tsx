@@ -18,18 +18,18 @@ const routes = [
     href: "/conversation",
     color: "text-violet-500",
   },
-  {
-    label: "Image Generation",
-    icon: ImageIcon,
-    href: "/image",
-    color: "text-red-700",
-  },
-  {
-    label: "Code Generation",
-    icon: Code,
-    href: "/code",
-    color: "text-green-700",
-  },
+  // {
+  //   label: "Image Generation",
+  //   icon: ImageIcon,
+  //   href: "/image",
+  //   color: "text-red-700",
+  // },
+  // {
+  //   label: "Code Generation",
+  //   icon: Code,
+  //   href: "/code",
+  //   color: "text-green-700",
+  // },
 ];
 
 const Sidebar = () => {
