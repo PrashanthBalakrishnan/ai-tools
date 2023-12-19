@@ -1,20 +1,20 @@
 "use client";
-import Heading from "@/components/Heading";
 
-import { Bot, MessageSquare, SendHorizonal, User } from "lucide-react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { useState } from "react";
-
-import { Button } from "@/components/ui/Button";
-import axios from "axios";
-import { useRouter } from "next/navigation";
-import Loader from "@/components/Loader";
-import { cn } from "@/lib/utils";
 import Empty from "@/components/Empty";
+import Heading from "@/components/Heading";
+import Loader from "@/components/Loader";
+import { Button } from "@/components/ui/Button";
 import Input from "@/components/ui/input";
 import { messageType } from "@/lib/types";
+import { cn } from "@/lib/utils";
+import axios from "axios";
+import { Bot, Image, SendHorizonal, User } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import ReactMarkdown from "react-markdown";
 
-const ConversationPage = () => {
+const LawyerPage = () => {
   const [messages, setMessages] = useState<messageType[]>([]);
   const router = useRouter();
   const {
@@ -35,7 +35,7 @@ const ConversationPage = () => {
         content: data.prompt,
       };
       const newMessage = [...messages, userMessage];
-      const response = await axios.post("/api/conversation", {
+      const response = await axios.post("/api/lawyer", {
         messages: newMessage,
       });
 
@@ -51,11 +51,11 @@ const ConversationPage = () => {
   return (
     <section>
       <Heading
-        title="Conversation"
-        desc="Have a conversation with AI."
-        icon={MessageSquare}
-        iconColor="text-violet-500"
-        bgColor="bg-violet-500/10"
+        title="Lawyer Chat"
+        desc="Create images using AI prompts."
+        icon={Image}
+        iconColor="text-blue-500"
+        bgColor="bg-blue-500/10"
       />
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -68,13 +68,13 @@ const ConversationPage = () => {
           errors={errors}
           register={register}
           id="prompt"
-          placeholder="How far is the moon from earth? "
-          className="col-span-12 h-10 w-full focus-visible:ring-violet-200 lg:col-span-10"
+          placeholder="Ask any law related question"
+          className="col-span-12 h-10 w-full focus-visible:ring-blue-200 lg:col-span-10"
         />
 
         <Button
           className="col-span-12 lg:col-span-2"
-          variant="purple"
+          variant="blue"
           disabled={isSubmitting}
         >
           Send
@@ -101,11 +101,25 @@ const ConversationPage = () => {
                 "flex w-full items-start gap-x-8 rounded-lg p-8",
                 message.role === "user"
                   ? "border border-black/10 bg-white"
-                  : "bg-violet-500/30",
+                  : "bg-blue-500/30",
               )}
             >
               {message.role === "user" ? <User size={25} /> : <Bot size={30} />}
-              <p className="text-sm">{message.content}</p>
+              <ReactMarkdown
+                components={{
+                  pre: ({ node, ...props }) => (
+                    <div className="my-2 w-full overflow-auto rounded-lg bg-black/10 p-2">
+                      <pre {...props} />
+                    </div>
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="rounded-lg bg-black/10 p-1" {...props} />
+                  ),
+                }}
+                className="overflow-hidden text-sm leading-7"
+              >
+                {message.content || ""}
+              </ReactMarkdown>
             </div>
           ))}
         </div>
@@ -113,4 +127,4 @@ const ConversationPage = () => {
     </section>
   );
 };
-export default ConversationPage;
+export default LawyerPage;

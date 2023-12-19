@@ -12,23 +12,29 @@ const routes = [
     color: "text-blue-500",
   },
   {
-    label: "Conversation",
+    label: "Chat",
     icon: MessageSquare,
     href: "/conversation",
     color: "text-violet-500",
   },
-  // {
-  //   label: "Image Generation",
-  //   icon: ImageIcon,
-  //   href: "/image",
-  //   color: "text-red-700",
-  // },
-  // {
-  //   label: "Code Generation",
-  //   icon: Code,
-  //   href: "/code",
-  //   color: "text-green-700",
-  // },
+  {
+    label: "Image Generator",
+    icon: ImageIcon,
+    href: "/image",
+    color: "text-red-700",
+  },
+  {
+    label: "Code Generation",
+    icon: Code,
+    href: "/code",
+    color: "text-green-700",
+  },
+  {
+    label: "Lawyer",
+    icon: Code,
+    href: "/lawyer",
+    color: "text-blue-700",
+  },
 ];
 
 interface SidebarProps {

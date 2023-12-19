@@ -5,6 +5,12 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_KEY,
 });
 
+const instructionMessage = {
+  role: "system",
+  content:
+    "You are a lawyer who passed the bar with a perfect score!.Reply to all questions as a lawyer!. keep the answers short and concise!. Use legal terms and citations for explan",
+};
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -19,8 +25,7 @@ export async function POST(req: Request) {
 
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages,
-      max_tokens: 100,
+      messages: [instructionMessage, ...messages],
     });
 
     return NextResponse.json(response.choices[0].message);

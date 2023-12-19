@@ -8,30 +8,38 @@ import { cn } from "@/lib/utils";
 
 const tools = [
   {
-    label: "Conversation",
+    label: "Chat",
     icon: MessageSquare,
     color: "text-violet-500",
     bgColor: "bg-violet-500/20",
     hoverColor: "hover:bg-violet-500/50",
     href: "/conversation",
   },
-  // {
-  //   label: "Image Generation",
-  //   icon: Image,
-  //   color: "text-red-500",
-  //   bgColor: "bg-red-500/20",
-  //   hoverColor: "hover:bg-red-500/50",
+  {
+    label: "Image generator",
+    icon: Image,
+    color: "text-red-500",
+    bgColor: "bg-red-500/20",
+    hoverColor: "hover:bg-red-500/50",
 
-  //   href: "/image",
-  // },
-  // {
-  //   label: "Code Generation",
-  //   icon: Code,
-  //   color: "text-green-500",
-  //   bgColor: "bg-green-500/20",
-  //   hoverColor: "hover:bg-green-500/50",
-  //   href: "/code",
-  // },
+    href: "/image",
+  },
+  {
+    label: "Code Generation",
+    icon: Code,
+    color: "text-green-500",
+    bgColor: "bg-green-500/20",
+    hoverColor: "hover:bg-green-500/50",
+    href: "/code",
+  },
+  {
+    label: "Lawyer",
+    icon: Code,
+    color: "text-blue-500",
+    bgColor: "bg-blue-500/20",
+    hoverColor: "hover:bg-blue-500/50",
+    href: "/lawyer",
+  },
 ];
 
 export default function Home() {
