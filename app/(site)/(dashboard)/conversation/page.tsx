@@ -4,7 +4,6 @@ import Heading from "@/components/Heading";
 import { Bot, MessageSquare, SendHorizonal, User } from "lucide-react";
 import { FieldValues, SubmitHandler, set, useForm } from "react-hook-form";
 import { useState } from "react";
-import Input from "@/components/ui/Input";
 
 import { Button } from "@/components/ui/Button";
 import axios from "axios";
@@ -12,6 +11,7 @@ import { useRouter } from "next/navigation";
 import Loader from "@/components/Loader";
 import { cn } from "@/lib/utils";
 import Empty from "@/components/Empty";
+import { Input } from "@/components/ui/Input";
 
 type messageType = {
   content: string;
@@ -65,14 +65,15 @@ const ConversationPage = () => {
         onSubmit={handleSubmit(onSubmit)}
         className="mx-4 grid grid-cols-12 gap-2 rounded-lg border p-4 px-3 md:px-6"
       >
+        <label htmlFor="prompt" className="sr-only">
+          Prompt
+        </label>
         <Input
-          label="Prompt"
           errors={errors}
           register={register}
           id="prompt"
           placeholder="How far is the moon from earth? "
-          className="col-span-12 h-10 w-full lg:col-span-10"
-          inputClassName="w-full focus:ring-violet-800 focus-visible:ring-violet-800"
+          className="col-span-12 h-10 w-full focus-visible:ring-violet-200 lg:col-span-10"
         />
 
         <Button
