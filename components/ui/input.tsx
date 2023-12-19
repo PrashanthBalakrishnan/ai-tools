@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { cn } from "@/lib/utils";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 interface InputProps {
@@ -13,6 +13,7 @@ interface InputProps {
   disabled?: boolean;
   placeholder?: string;
   className?: string;
+  inputClassName?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -25,19 +26,20 @@ const Input: React.FC<InputProps> = ({
   disabled,
   placeholder,
   className,
+  inputClassName,
 }) => {
   return (
-    <div className="p-5">
+    <div className={cn(className)}>
       <label className="sr-only" htmlFor={id}>
         {label}
       </label>
-      <div className="mt-2">
+      <div>
         <input
-          className={clsx(
-            ` `,
+          className={cn(
+            "placeholde:text-gray-400 h-10 rounded-md p-1.5 px-4 py-2 outline-none ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6",
+            inputClassName,
             errors[id] && "focus:ring-rose-500",
             disabled && "cursor-default opacity-50",
-            className,
           )}
           id={id}
           type={type}

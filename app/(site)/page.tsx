@@ -3,30 +3,33 @@
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
 import { ArrowRight, MessageSquare, Code, Image } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 const tools = [
   {
     label: "Conversation",
     icon: MessageSquare,
     color: "text-violet-500",
-    bgColor: "bg-violet-500/10",
-    outlineColor: "focus:ring-violet-500",
+    bgColor: "bg-violet-500/20",
+    hoverColor: "hover:bg-violet-500/50",
     href: "/conversation",
   },
   {
     label: "Image Generation",
     icon: Image,
     color: "text-red-500",
-    bgColor: "bg-red-500/10",
-    outlineColor: "focus:ring-red-500",
+    bgColor: "bg-red-500/20",
+    hoverColor: "hover:bg-red-500/50",
+
     href: "/image",
   },
   {
     label: "Code Generation",
     icon: Code,
     color: "text-green-500",
-    bgColor: "bg-green-500/10",
-    outlineColor: "focus:ring-green-500",
+    bgColor: "bg-green-500/20",
+    hoverColor: "hover:bg-green-500/50",
     href: "/code",
   },
 ];
@@ -46,27 +49,16 @@ export default function Home() {
       </div>
       <div className="space-y-4 px-4 md:px-20 lg:px-32">
         {tools.map((tool) => (
-          <button
-            key={tool.href}
-            onClick={() => router.push(tool.href)}
-            className={clsx(
-              "mx-auto flex w-full items-center rounded-xl border p-4 shadow-md transition-all hover:shadow-xl focus:outline-none focus:ring-2",
-              tool.outlineColor,
-            )}
-          >
-            <div className="flex items-center gap-5">
-              <div
-                className={clsx(
-                  "flex h-16 w-16 items-center justify-center rounded-full",
-                  tool.bgColor,
-                )}
-              >
-                <tool.icon className={tool.color} size={32} />
-              </div>
-              <div className="text-center text-lg font-bold">{tool.label}</div>
-            </div>
-            <ArrowRight className="ml-auto h-10 w-10" />
-          </button>
+          <div key={tool.href}>
+            <Button
+              onClick={() => router.push(tool.href)}
+              className={cn(tool.bgColor, tool.hoverColor, "hover:text-white")}
+              size="card"
+            >
+              <tool.icon className={cn(tool.color)} />
+              {tool.label}
+            </Button>
+          </div>
         ))}
       </div>
     </section>
