@@ -55,7 +55,7 @@ const LogoPage = () => {
         className="mx-4 grid grid-cols-12 gap-2 rounded-lg border p-4 px-3 md:px-6"
       >
         <label htmlFor="prompt" className="sr-only">
-          Prompt
+          Create images using AI prompts.
         </label>
         <Input
           errors={errors}

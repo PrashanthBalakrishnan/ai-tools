@@ -1,8 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import clsx from "clsx";
-import { ArrowRight, MessageSquare, Code, Image } from "lucide-react";
+import { Pill, MessageSquare, Code, Image, Scale } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -34,11 +33,19 @@ const tools = [
   },
   {
     label: "Lawyer",
-    icon: Code,
+    icon: Scale,
     color: "text-blue-500",
     bgColor: "bg-blue-500/20",
     hoverColor: "hover:bg-blue-500/50",
     href: "/lawyer",
+  },
+  {
+    label: "Doctor",
+    icon: Pill,
+    color: "text-teal-500",
+    bgColor: "bg-teal-500/20",
+    hoverColor: "hover:bg-teal-500/50",
+    href: "/doctor",
   },
 ];
 
@@ -60,7 +67,11 @@ export default function Home() {
           <div key={tool.href}>
             <Button
               onClick={() => router.push(tool.href)}
-              className={cn(tool.bgColor, tool.hoverColor, "hover:text-white")}
+              className={cn(
+                tool.bgColor,
+                tool.hoverColor,
+                "text-lg hover:text-white",
+              )}
               size="card"
             >
               <tool.icon className={cn(tool.color)} />
