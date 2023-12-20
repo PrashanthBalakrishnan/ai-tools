@@ -8,7 +8,7 @@ import Input from "@/components/ui/input";
 import { messageType } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import axios from "axios";
-import { Bot, Image, SendHorizonal, User } from "lucide-react";
+import { Bot, Scale, SendHorizonal, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -53,7 +53,7 @@ const LawyerPage = () => {
       <Heading
         title="Lawyer Chat"
         desc="Create images using AI prompts."
-        icon={Image}
+        icon={Scale}
         iconColor="text-blue-500"
         bgColor="bg-blue-500/10"
       />
@@ -62,7 +62,7 @@ const LawyerPage = () => {
         className="mx-4 grid grid-cols-12 gap-2 rounded-lg border p-4 px-3 md:px-6"
       >
         <label htmlFor="prompt" className="sr-only">
-          Prompt
+          Ask any law related question
         </label>
         <Input
           errors={errors}

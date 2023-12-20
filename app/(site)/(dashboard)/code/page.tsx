@@ -63,13 +63,13 @@ const CodePage = () => {
         className="mx-4 grid grid-cols-12 gap-2 rounded-lg border p-4 px-3 md:px-6"
       >
         <label htmlFor="prompt" className="sr-only">
-          Prompt
+          Ask any code related question
         </label>
         <Input
           errors={errors}
           register={register}
           id="prompt"
-          placeholder="How to create a toggle button on react? "
+          placeholder="Ask any code related question"
           className="col-span-12 h-10 w-full focus-visible:ring-green-200 lg:col-span-10"
         />
 

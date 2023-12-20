@@ -1,5 +1,11 @@
 "use client";
-import { LayoutDashboard, MessageSquare, ImageIcon, Code } from "lucide-react";
+import {
+  LayoutDashboard,
+  MessageSquare,
+  ImageIcon,
+  Code,
+  Pill,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -34,6 +40,12 @@ const routes = [
     icon: Code,
     href: "/lawyer",
     color: "text-blue-700",
+  },
+  {
+    label: "Doctor",
+    icon: Pill,
+    href: "/doctor",
+    color: "text-teal-700",
   },
 ];
 

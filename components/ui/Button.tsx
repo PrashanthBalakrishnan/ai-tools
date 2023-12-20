@@ -18,6 +18,7 @@ const buttonVariants = cva(
           "bg-green-800 hover:bg-green-600 focus-visible:outline-green-600 text-white",
         blue: "bg-blue-800 hover:bg-blue-600 focus-visible:outline-blue-600 text-white",
         red: "bg-red-800 hover:bg-red-600 focus-visible:outline-red-600 text-white",
+        teal: "bg-teal-800 hover:bg-teal-600 focus-visible:outline-teal-600 text-white",
       },
       size: {
         default: "h-10 px-4 py-2",
