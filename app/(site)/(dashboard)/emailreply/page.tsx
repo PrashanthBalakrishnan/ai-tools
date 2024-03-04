@@ -14,8 +14,9 @@ import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 
-const LawyerPage = () => {
+const EmailReplyPage = () => {
   const [messages, setMessages] = useState<messageType[]>([]);
+  const [emailBody, setEmailBody] = useState<string>("");
   const router = useRouter();
   const {
     register,
@@ -51,25 +52,35 @@ const LawyerPage = () => {
   return (
     <section>
       <Heading
-        title="Lawyer Chat"
-        desc="Ask any law related questions."
+        title="Email Reply"
+        desc="Helps you write emails."
         icon={Scale}
-        iconColor="text-blue-500"
-        bgColor="bg-blue-500/10"
+        iconColor="text-yellow-500"
+        bgColor="bg-yellow-500/10"
       />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="mx-4 grid grid-cols-12 gap-2 rounded-lg border p-4 px-3 md:px-6"
       >
-        <label htmlFor="prompt" className="sr-only">
-          Ask any law related question
+        <label htmlFor="email-body" className="sr-only">
+          Email Body
         </label>
         <Input
           errors={errors}
           register={register}
-          id="prompt"
+          id="email-body"
+          placeholder="Email Body"
+          className="col-span-12 h-0 w-full focus-visible:ring-yellow-200 lg:col-span-10"
+        />
+        <label htmlFor="email-reply" className="sr-only">
+          Email Body
+        </label>
+        <Input
+          errors={errors}
+          register={register}
+          id="email-reply"
           placeholder="Ask any law related question"
-          className="col-span-12 h-10 w-full focus-visible:ring-blue-200 lg:col-span-10"
+          className="col-span-12 h-10 w-full focus-visible:ring-yellow-200 lg:col-span-10"
         />
 
         <Button
@@ -127,4 +138,4 @@ const LawyerPage = () => {
     </section>
   );
 };
-export default LawyerPage;
+export default EmailReplyPage;

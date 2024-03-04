@@ -5,6 +5,7 @@ import {
   ImageIcon,
   Code,
   Pill,
+  Mail,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -47,6 +48,12 @@ const routes = [
     href: "/doctor",
     color: "text-teal-700",
   },
+  // {
+  //   label: "Email Reply",
+  //   icon: Mail,
+  //   href: "/emailreply",
+  //   color: "text-yellow-700",
+  // },
 ];
 
 interface SidebarProps {
