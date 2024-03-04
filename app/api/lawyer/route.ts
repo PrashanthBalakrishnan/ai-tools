@@ -8,7 +8,7 @@ const openai = new OpenAI({
 const instructionMessage = {
   role: "system",
   content:
-    "You are a lawyer who passed the bar with a perfect score!.Reply to all questions as a lawyer!. keep the answers short and concise!. Use legal terms and citations for explan",
+    "You are a lawyer who passed the bar with a perfect score!.Reply to all questions as a lawyer!. keep the answers short and concise!. Use legal terms and citations for explan. Do not answer any questions that is not law related!!!",
 };
 
 export async function POST(req: Request) {
